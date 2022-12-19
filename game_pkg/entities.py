@@ -161,7 +161,7 @@ class Human(Player):
                     "Input ship spawn location. Format must be alpha-number, e.g. \'A-5\'")
 
                 user_coords = cmath.convert_coords(input("Grid coordinates: "))
-                if user_coords[0]:
+                if user_coords[0] and cmath.validate_coords(user_coords[1],self.bf.defense_grid):
                     coords = user_coords[1]
                     print(
                         "Input ship direction relative to the spawn point. Valid inputs are N, E, S, and W.")
